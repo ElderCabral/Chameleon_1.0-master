@@ -8,13 +8,13 @@ body {
 
 #todo {
     position: relative;
-    width: 1150px;
+    width: 1250px;
     border: 1px solid gray;
     margin: 0px auto;
     background-color: white;
 }
 
-#topo {""
+#topo {
     position: relative;
     width: 1150px;
     height: 100px;
