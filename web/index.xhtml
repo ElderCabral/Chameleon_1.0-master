@@ -11,7 +11,20 @@
                 <ui:repeat value="#{imagesView.images}" var="image" >
                     <p:graphicImage name="/images/#{image}" width="847" height="330" style="background: white"/>
                 </ui:repeat>
+
             </p:imageSwitch>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            
+            <p:imageSwitch effect="zoom">
+                <ui:repeat value="#{imagesView.images}" var="image" >
+                    <p:graphicImage name="/images/#{image}" width="847" height="330" style="background: white"/>
+                </ui:repeat>
+
+            </p:imageSwitch>
+
         </ui:define>
     </ui:composition>
 
