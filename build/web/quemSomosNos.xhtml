@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <ui:composition template="template.xhtml">
+        <ui:define name="body">
+            
+                <p:growl id="pagamentos" showDetail="true" />
+                <p:panel id="credito" header="Quem somos nós" footer="* MilkWay uma indústria brasileira !. " style="margin-bottom:20px">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="/images/quemSomosNos.png" width="200" height="200" />
+                        <h:outputText
+                            value="Aceitamos os cartões de crédito:  Mastercard, Diners, American Express e Visa. Parcelamos em 2 vezes sem juros nos cartões da bandeira Mastercard, Diners e American Express.
+
+                            O pagamento por cartão de crédito é totalmente seguro. Os dados do cartão do cliente são digitados diretamente no ambiente da operadora, não havendo trafego dos mesmos, entre a loja e a operadora. Dessa forma, o MilkWay Delivery não armazena nenhum tipo de informação de seus dados de cartão de crédito, sendo o mesmo procedimento adotado para qualquer uma das bandeiras aceitas.
+
+                            Caso haja qualquer divergência em seu pedido, efeuaremos um contato por telefone, ou através do e-mail cadastrado.
+
+                            O Prazo de Entrega de sua compra passa a ser considerado após a aprovação do seu pagamento junto á operadora." />
+                    </h:panelGrid>
+                </p:panel>
+                
+    </ui:define>
+</ui:composition>
+
+</html>
+
