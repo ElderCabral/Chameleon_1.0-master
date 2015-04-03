@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="template.xhtml">
+        <ui:define name="body">
+
+            <h:form id="cadCliente">
+                <h1 style="font-family: calibri">Cadastro</h1>
+                <br />
+                <h:panelGrid columns="3">
+                    <h:outputText value="Nome:" style="font-family: calibri" />
+                    <h:inputText id="nome" value="#{clienteMB.clienteAux.nome}" style="border-radius: 10px" required="true" requiredMessage="Digite o Nome" />
+                    <h:message id="msgNome" for="nome" style="color: red" />
+
+                    <h:outputText value="CPF:" style="font-family: calibri" />
+                    <h:inputText id="cpf" value="#{clienteMB.clienteAux.cpf}" style="border-radius: 10px" required="true" requiredMessage="Digite o CPF" />
+                    <h:message id="msgCpf" for="cpf" style="color: red" />
+
+                    <h:outputText value="Idade:" style="font-family: calibri" />
+                    <h:inputText id="idade" value="#{clienteMB.clienteAux.idade}" required="true" maxlength="2" requiredMessage="Digite a Idade" style="border-radius: 10px">
+                        <f:convertNumber type="number" maxFractionDigits="2" />
+                    </h:inputText>
+                    <h:message id="msgIdade" for="idade" style="color: red" />
+
+                    <h:outputText value="Data Nascimento:" style="font-family: calibri" />
+                    <h:inputText id="dataNascimento" value="#{clienteMB.clienteAux.nascimento}" required="true" requiredMessage="Digite a Data Nascimento" style="border-radius: 10px">
+                        <f:convertDateTime pattern="dd/MM/yyyy" locale="pt_BR" type="date" />
+                    </h:inputText>
+                    <h:message id="msgDtNasc" for="dataNascimento" style="color: red" />
+
+                    <h:outputText value="Sexo:" style="font-family: calibri" />
+                    <h:selectOneRadio id="sexo" value="#{clienteMB.clienteAux.sexo}" style="font-family: calibri" required="true" requiredMessage="Selecione o Sexo">
+                        <f:selectItem itemLabel="Feminino" itemValue="Faminino" />
+                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                    </h:selectOneRadio>
+                    <h:message id="msgSexo" for="sexo" style="color: red" />
+
+                    <h:outputText value="Rua:" style="font-family: calibri" />
+                    <h:inputText id="rua" value="#{clienteMB.endereco.rua}" style="border-radius: 10px" required="true" requiredMessage="Digite a Rua" />
+                    <h:message id="msgRua" for="rua" style="color: red" />
+
+                    <h:outputText value="N°" style="font-family: calibri" />
+                    <h:inputText id="numero" value="#{clienteMB.endereco.numero}" maxlength="4" style="border-radius: 10px" required="true" requiredMessage="Digite o Número">
+                        <f:convertNumber type="number" maxFractionDigits="4" />
+                    </h:inputText>
+                    <h:message id="msgNumero" for="numero" style="color:red" />
+
+                    <h:outputText value="Bairro" style="font-family: calibri" />
+                    <h:inputText id="bairro" value="#{clienteMB.endereco.bairro}" style="border-radius: 10px" required="true" requiredMessage="Digite o Bairro" />
+                    <h:message id="msgBairro" for="bairro" style="color:red" />
+
+                    <h:outputText value="Cidade" style="font-family: calibri" />
+                    <h:inputText id="cidade" value="#{clienteMB.endereco.cidade}" style="border-radius: 10px" required="true" requiredMessage="Digite a Cidade" />
+                    <h:message id="msgCidade" for="cidade" style="color:red" />
+
+                    <h:outputText value="Cep:" style="font-family: calibri" />
+                    <h:inputText id="cep" value="#{clienteMB.endereco.cep}" required="true" requiredMessage="Digite o CEP" style="border-radius: 10px" />
+                    <h:message id="msgCep" for="cep" style="color: red" />
+                </h:panelGrid>
+                <h:panelGrid columns="4">
+                    <h:outputText value="Telefone:" style="font-family: calibri" />
+                    <h:selectOneMenu value="#{clienteMB.telefone.tipo}" style="border-radius: 10px; font-family: calibri">
+                        <f:selectItem itemLabel="Res" itemValue="Residencial" />
+                        <f:selectItem itemLabel="Cel" itemValue="Celular" />
+                        <f:selectItem itemLabel="Com" itemValue="Comercial" />
+                    </h:selectOneMenu>
+                    <h:inputText value="#{clienteMB.telefone.ddd}" size="3" style="border-radius: 10px">
+                        <f:convertNumber type="number" />
+                    </h:inputText>
+                    <h:inputText value="#{clienteMB.telefone.numero}" style="border-radius: 10px" size="9"/>
+                </h:panelGrid>
+                
+                <h:panelGrid columns="2">
+                    <h:outputText value="Email" style="font-family: calibri" />
+                    <h:inputText value="#{clienteMB.clienteAux.email}" style="border-radius: 10px" />
+                    
+                    <h:outputText value="Senha:" style="font-family: calibri" />
+                    <h:inputSecret value="#{clienteMB.clienteAux.senha}" style="border-radius: 10px" />
+                </h:panelGrid>
+                <p:commandButton value="Salvar" action="#{clienteMB.cadastroCliente()}" style="border-radius: 10px; font-family: calibri" ajax="false" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+
